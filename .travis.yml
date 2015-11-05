@@ -13,5 +13,5 @@ cache:
 install: rm ~/.m2/settings.xml
 
 script:
-  - mvn -q -U -Psnapshots clean install
+  - travis_wait mvn -q -U -Psnapshots clean install
   - if [ $TRAVIS_PULL_REQUEST = false ] && [ $TRAVIS_BRANCH = master ]; then chmod +x deploy-javadoc.sh && ./deploy-javadoc.sh; fi
