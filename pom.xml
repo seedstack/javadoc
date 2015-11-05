@@ -16,7 +16,9 @@
         <version>2.1.0-SNAPSHOT</version>
     </parent>
 
+    <groupId>org.seedstack.javadoc</groupId>
     <artifactId>javadoc</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <properties>
@@ -35,11 +37,11 @@
                             <goal>javadoc</goal>
                         </goals>
                         <configuration>
-                            <doctitle>SeedStack ${project.version}</doctitle>
+                            <doctitle>SeedStack ${seedstack.version}</doctitle>
                             <detectOfflineLinks>false</detectOfflineLinks>
                             <includeDependencySources>true</includeDependencySources>
                             <includeTransitiveDependencySources>false</includeTransitiveDependencySources>
-                            <excludePackageNames>*.internal.*:org.springframework*:org.seedstack.batch.monitoring.rest*:org.seedstack.i18n.rest*:org.seedstack.io.rest*:org.seedstack.w20.rest*</excludePackageNames>
+                            <excludePackageNames>*.internal.*:org.springframework*</excludePackageNames>
                             <additionalDependencies>
                                 <additionalDependency>
                                     <groupId>javax.el</groupId>
@@ -380,6 +382,17 @@
             <artifactId>web-services-web</artifactId>
         </dependency>
     </dependencies>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>bintray-jfrog-jfrog-jars</id>
+            <name>bintray-plugins</name>
+            <url>http://dl.bintray.com/jfrog/jfrog-jars</url>
+        </pluginRepository>
+    </pluginRepositories>
 
     <profiles>
         <profile>
