@@ -13,7 +13,7 @@
     <parent>
         <groupId>org.seedstack.poms</groupId>
         <artifactId>parent-internal</artifactId>
-        <version>2.4.0</version>
+        <version>3.0.0</version>
     </parent>
 
     <groupId>org.seedstack.javadoc</groupId>
@@ -22,7 +22,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <seedstack.version>16.7</seedstack.version>
+        <seedstack.version>16.11.2</seedstack.version>
     </properties>
 
     <build>
@@ -46,27 +46,22 @@
                                 <additionalDependency>
                                     <groupId>javax.el</groupId>
                                     <artifactId>javax.el-api</artifactId>
-                                    <version>${javax-el.version}</version>
+                                    <version>${javax.el.version}</version>
                                 </additionalDependency>
                                 <additionalDependency>
                                     <groupId>javax.servlet</groupId>
                                     <artifactId>javax.servlet-api</artifactId>
-                                    <version>${javax.servlet-api.version}</version>
+                                    <version>${javax.servlet.version}</version>
                                 </additionalDependency>
                                 <additionalDependency>
                                     <groupId>javax.jms</groupId>
                                     <artifactId>jms-api</artifactId>
-                                    <version>${jms-api.version}</version>
+                                    <version>1.1-rev-1</version>
                                 </additionalDependency>
                                 <additionalDependency>
                                     <groupId>org.hibernate.javax.persistence</groupId>
                                     <artifactId>hibernate-jpa-2.1-api</artifactId>
                                     <version>1.0.0.Final</version>
-                                </additionalDependency>
-                                <additionalDependency>
-                                    <groupId>javax.mail</groupId>
-                                    <artifactId>mail</artifactId>
-                                    <version>1.4.7</version>
                                 </additionalDependency>
                                 <additionalDependency>
                                     <groupId>javax.mail</groupId>
@@ -128,23 +123,7 @@
         </dependency>
         <dependency>
             <groupId>org.seedstack.seed</groupId>
-            <artifactId>seed-crypto</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.seedstack.seed</groupId>
-            <artifactId>seed-el</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.seedstack.seed</groupId>
-            <artifactId>seed-metrics</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.seedstack.seed</groupId>
             <artifactId>seed-rest-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.seedstack.seed</groupId>
-            <artifactId>seed-rest-jersey1</artifactId>
         </dependency>
         <dependency>
             <groupId>org.seedstack.seed</groupId>
@@ -164,20 +143,12 @@
         </dependency>
         <dependency>
             <groupId>org.seedstack.seed</groupId>
-            <artifactId>seed-shell</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.seedstack.seed</groupId>
             <artifactId>seed-specs</artifactId>
         </dependency>
         <dependency>
             <groupId>org.seedstack.seed</groupId>
             <artifactId>seed-testing</artifactId>
             <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.seedstack.seed</groupId>
-            <artifactId>seed-transaction</artifactId>
         </dependency>
         <dependency>
             <groupId>org.seedstack.seed</groupId>
@@ -218,6 +189,12 @@
         <dependency>
             <groupId>org.seedstack.addons.audit</groupId>
             <artifactId>audit-logback</artifactId>
+        </dependency>
+
+        <!-- Data security add-on -->
+        <dependency>
+            <groupId>org.seedstack.addons.datasecurity</groupId>
+            <artifactId>data-security</artifactId>
         </dependency>
 
         <!-- ElasticSearch add-on -->
@@ -279,11 +256,7 @@
         <!-- JMS add-on -->
         <dependency>
             <groupId>org.seedstack.addons.jms</groupId>
-            <artifactId>jms-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.seedstack.addons.jms</groupId>
-            <artifactId>jms-specs</artifactId>
+            <artifactId>jms</artifactId>
         </dependency>
 
         <!-- JPA add-on -->
@@ -296,6 +269,12 @@
         <dependency>
             <groupId>org.seedstack.addons.ldap</groupId>
             <artifactId>ldap</artifactId>
+        </dependency>
+
+        <!-- Metrics add-on -->
+        <dependency>
+            <groupId>org.seedstack.addons.metrics</groupId>
+            <artifactId>metrics</artifactId>
         </dependency>
 
         <!-- MongoDB add-on -->
@@ -313,11 +292,25 @@
             <groupId>org.seedstack.addons.monitoring</groupId>
             <artifactId>monitoring-batch</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.seedstack.addons.monitoring</groupId>
+            <artifactId>monitoring-mqtt</artifactId>
+        </dependency>
 
         <!-- MQTT add-on -->
         <dependency>
             <groupId>org.seedstack.addons.mqtt</groupId>
             <artifactId>mqtt</artifactId>
+        </dependency>
+
+         <!-- Netflix add-on -->
+        <dependency>
+            <groupId>org.seedstack.addons.netflix</groupId>
+            <artifactId>netflix-hystrix</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.seedstack.addons.netflix</groupId>
+            <artifactId>netflix-feign</artifactId>
         </dependency>
 
          <!-- Neo4j add-on -->
@@ -336,6 +329,12 @@
         <dependency>
             <groupId>org.seedstack.addons.scheduling</groupId>
             <artifactId>scheduling</artifactId>
+        </dependency>
+
+        <!-- Shell add-on -->
+        <dependency>
+            <groupId>org.seedstack.addons.shell</groupId>
+            <artifactId>shell</artifactId>
         </dependency>
 
         <!-- Solr add-on -->
@@ -358,12 +357,6 @@
         <dependency>
             <groupId>org.seedstack.addons.swagger</groupId>
             <artifactId>swagger</artifactId>
-        </dependency>
-
-        <!-- Validation add-on -->
-        <dependency>
-            <groupId>org.seedstack.addons.validation</groupId>
-            <artifactId>validation</artifactId>
         </dependency>
 
         <!-- W20 bridge add-on -->
