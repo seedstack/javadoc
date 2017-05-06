@@ -22,7 +22,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <seedstack.version>16.11.2</seedstack.version>
+        <seedstack.version>17.4</seedstack.version>
     </properties>
 
     <build>
@@ -37,11 +37,12 @@
                             <goal>javadoc</goal>
                         </goals>
                         <configuration>
+                            <windowtitle>SeedStack ${seedstack.version} Javadoc</windowtitle>
                             <doctitle>SeedStack ${seedstack.version}</doctitle>
                             <detectOfflineLinks>false</detectOfflineLinks>
                             <includeDependencySources>true</includeDependencySources>
                             <includeTransitiveDependencySources>false</includeTransitiveDependencySources>
-                            <excludePackageNames>*.internal.*:org.springframework*</excludePackageNames>
+                            <excludePackageNames>*.internal.*:org.springframework*:org.openjdk*</excludePackageNames>
                             <additionalDependencies>
                                 <additionalDependency>
                                     <groupId>javax.el</groupId>
@@ -112,6 +113,18 @@
     </dependencyManagement>
 
     <dependencies>
+        <!-- Shed -->
+        <dependency>
+            <groupId>org.seedstack.shed</groupId>
+            <artifactId>shed</artifactId>
+        </dependency>
+
+        <!-- Coffig -->
+        <dependency>
+            <groupId>org.seedstack.coffig</groupId>
+            <artifactId>coffig</artifactId>
+        </dependency>
+
         <!-- Seed -->
         <dependency>
             <groupId>org.seedstack.seed</groupId>
@@ -203,6 +216,12 @@
             <artifactId>elasticsearch</artifactId>
         </dependency>
 
+        <!-- OpenFeign add-on -->
+        <dependency>
+            <groupId>org.seedstack.addons.feign</groupId>
+            <artifactId>feign</artifactId>
+        </dependency>
+
         <!-- I18n add-on -->
         <dependency>
             <groupId>org.seedstack.addons.i18n</groupId>
@@ -251,6 +270,16 @@
         <dependency>
             <groupId>org.seedstack.addons.jdbc</groupId>
             <artifactId>jdbc</artifactId>
+        </dependency>
+
+        <!-- JMH add-on -->
+        <dependency>
+            <groupId>org.seedstack.addons.jmh</groupId>
+            <artifactId>jmh-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.seedstack.addons.jmh</groupId>
+            <artifactId>jmh-launcher</artifactId>
         </dependency>
 
         <!-- JMS add-on -->
@@ -307,10 +336,6 @@
         <dependency>
             <groupId>org.seedstack.addons.netflix</groupId>
             <artifactId>netflix-hystrix</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.seedstack.addons.netflix</groupId>
-            <artifactId>netflix-feign</artifactId>
         </dependency>
 
          <!-- Neo4j add-on -->
