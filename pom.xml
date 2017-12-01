@@ -52,8 +52,8 @@
                             <goal>javadoc</goal>
                         </goals>
                         <configuration>
-                            <windowtitle>SeedStack ${seedstack.version} Javadoc</windowtitle>
-                            <doctitle>SeedStack ${seedstack.version}</doctitle>
+                            <windowtitle>SeedStack API</windowtitle>
+                            <doctitle>SeedStack API</doctitle>
                             <detectOfflineLinks>false</detectOfflineLinks>
                             <includeDependencySources>true</includeDependencySources>
                             <includeTransitiveDependencySources>false</includeTransitiveDependencySources>
