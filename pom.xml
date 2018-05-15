@@ -1,6 +1,6 @@
 <!--
 
-    Copyright (c) 2013-2016, The SeedStack authors <http://seedstack.org>
+    Copyright © 2013-2018, The SeedStack authors <http://seedstack.org>
 
     This Source Code Form is subject to the terms of the Mozilla Public
     License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -13,7 +13,7 @@
     <parent>
         <groupId>org.seedstack.poms</groupId>
         <artifactId>parent-internal</artifactId>
-        <version>3.1.0</version>
+        <version>3.3.1</version>
     </parent>
 
     <groupId>org.seedstack.javadoc</groupId>
@@ -22,7 +22,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <seedstack.version>17.11</seedstack.version>
+        <seedstack.version>18.4</seedstack.version>
     </properties>
 
     <build>
@@ -59,11 +59,6 @@
                             <includeTransitiveDependencySources>false</includeTransitiveDependencySources>
                             <excludePackageNames>*.internal.*:org.springframework*:org.openjdk*:org.apache.shiro*</excludePackageNames>
                             <additionalDependencies>
-                                <additionalDependency>
-                                    <groupId>org.jboss.arquillian.junit</groupId>
-                                    <artifactId>arquillian-junit-core</artifactId>
-                                    <version>${arquillian.version}</version>
-                                </additionalDependency>
                                 <additionalDependency>
                                     <groupId>javax.el</groupId>
                                     <artifactId>javax.el-api</artifactId>
@@ -116,8 +111,8 @@
                                 </additionalDependency>
                                 <additionalDependency>
                                     <groupId>org.neo4j</groupId>
-                                    <artifactId>neo4j</artifactId>
-                                    <version>2.2.3</version>
+                                    <artifactId>neo4j-graphdb-api</artifactId>
+                                    <version>3.1.0</version>
                                 </additionalDependency>
                                 <additionalDependency>
                                     <groupId>org.quartz-scheduler</groupId>
@@ -134,10 +129,19 @@
                                     <artifactId>solr-solrj</artifactId>
                                     <version>5.2.1</version>
                                 </additionalDependency>
+                                <additionalDependency>
+                                    <groupId>org.elasticsearch</groupId>
+                                    <artifactId>elasticsearch</artifactId>
+                                    <version>2.4.3</version>
+                                </additionalDependency>
+                                <additionalDependency>
+                                    <groupId>org.assertj</groupId>
+                                    <artifactId>assertj-core</artifactId>
+                                    <version>${assertj.version}</version>
+                                </additionalDependency>
                             </additionalDependencies>
                             <dependencySourceExcludes>
-                                <dependencySourceExclude>org.seedstack.addons:*-web*</dependencySourceExclude>
-                                <dependencySourceExclude>com.google.code.findbugs:annotations</dependencySourceExclude>
+                                <dependencySourceExclude>com.google.code.findbugs:*</dependencySourceExclude>
                             </dependencySourceExcludes>
                         </configuration>
                     </execution>
@@ -206,7 +210,22 @@
         </dependency>
         <dependency>
             <groupId>org.seedstack.seed</groupId>
-            <artifactId>seed-testing</artifactId>
+            <artifactId>seed-testing-specs</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.seedstack.seed</groupId>
+            <artifactId>seed-testing-core</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.seedstack.seed</groupId>
+            <artifactId>seed-testing-junit4</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.seedstack.seed</groupId>
+            <artifactId>seed-testing-arquillian</artifactId>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -260,14 +279,18 @@
         <dependency>
             <groupId>org.seedstack.addons.cci</groupId>
             <artifactId>cci</artifactId>
-            <!-- TODO remove when distribution is udpated -->
-            <version>1.0.1</version>
         </dependency>
 
         <!-- Consul add-on -->
         <dependency>
             <groupId>org.seedstack.addons.consul</groupId>
             <artifactId>consul</artifactId>
+        </dependency>
+
+        <!-- CRUD add-on -->
+        <dependency>
+            <groupId>org.seedstack.addons.crud</groupId>
+            <artifactId>crud-rest</artifactId>
         </dependency>
 
         <!-- Data security add-on -->
@@ -420,6 +443,12 @@
         <dependency>
             <groupId>org.seedstack.addons.netflix</groupId>
             <artifactId>netflix-hystrix</artifactId>
+        </dependency>
+
+        <!-- OAuth add-on -->
+        <dependency>
+            <groupId>org.seedstack.addons.oauth</groupId>
+            <artifactId>oauth</artifactId>
         </dependency>
 
         <!-- Neo4j add-on -->
