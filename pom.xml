@@ -533,11 +533,30 @@
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
+            <id>central</id>
+            <name>bintray-plugins</name>
+            <url>http://jcenter.bintray.com</url>
+        </pluginRepository>
+        <pluginRepository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
             <id>bintray-jfrog-jfrog-jars</id>
             <name>bintray-plugins</name>
             <url>http://dl.bintray.com/jfrog/jfrog-jars</url>
         </pluginRepository>
     </pluginRepositories>
+
+    <repositories>
+        <repository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>central</id>
+            <name>bintray</name>
+            <url>http://jcenter.bintray.com</url>
+        </repository>
+    </repositories>
 
     <profiles>
         <profile>
