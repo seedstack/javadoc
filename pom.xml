@@ -39,6 +39,16 @@
                         </execution>
                     </executions>
                 </plugin>
+                <plugin>
+                    <groupId>org.jfrog.buildinfo</groupId>
+                    <artifactId>artifactory-maven-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <id>build-info</id>
+                            <phase>none</phase>
+                        </execution>
+                    </executions>
+                </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
@@ -57,7 +67,8 @@
                             <detectOfflineLinks>false</detectOfflineLinks>
                             <includeDependencySources>true</includeDependencySources>
                             <includeTransitiveDependencySources>false</includeTransitiveDependencySources>
-                            <excludePackageNames>*.internal.*:org.springframework*:org.openjdk*:org.apache.shiro*</excludePackageNames>
+                            <excludePackageNames>*.internal.*:org.springframework*:org.openjdk*:org.apache.shiro*
+                            </excludePackageNames>
                             <additionalDependencies>
                                 <additionalDependency>
                                     <groupId>javax.el</groupId>
@@ -527,53 +538,4 @@
             <artifactId>web-services-web</artifactId>
         </dependency>
     </dependencies>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>central</id>
-            <name>bintray-plugins</name>
-            <url>http://jcenter.bintray.com</url>
-        </pluginRepository>
-        <pluginRepository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>bintray-jfrog-jfrog-jars</id>
-            <name>bintray-plugins</name>
-            <url>http://dl.bintray.com/jfrog/jfrog-jars</url>
-        </pluginRepository>
-    </pluginRepositories>
-
-    <repositories>
-        <repository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>central</id>
-            <name>bintray</name>
-            <url>http://jcenter.bintray.com</url>
-        </repository>
-    </repositories>
-
-    <profiles>
-        <profile>
-            <id>snapshots</id>
-            <repositories>
-                <repository>
-                    <snapshots>
-                        <enabled>true</enabled>
-                    </snapshots>
-                    <releases>
-                        <enabled>false</enabled>
-                    </releases>
-                    <id>ojo-libs-snapshot</id>
-                    <name>ojo-snapshots</name>
-                    <url>https://oss.jfrog.org/artifactory/libs-snapshot</url>
-                </repository>
-            </repositories>
-        </profile>
-    </profiles>
 </project>

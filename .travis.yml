@@ -10,8 +10,6 @@ notifications:
 cache:
   directories: "$HOME/.m2/repository"
 
-install: rm ~/.m2/settings.xml
-
-script: travis_wait mvn -q -U -Psnapshots clean install
+script: travis_wait mvn -q -U clean install
 
 after_success: if [ $TRAVIS_PULL_REQUEST = false ] && [ $TRAVIS_BRANCH = master ]; then chmod +x deploy-javadoc.sh && ./deploy-javadoc.sh; fi
