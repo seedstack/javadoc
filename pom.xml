@@ -18,12 +18,8 @@
 
     <groupId>org.seedstack.javadoc</groupId>
     <artifactId>javadoc</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>18.11.3</version>
     <packaging>pom</packaging>
-
-    <properties>
-        <seedstack.version>18.4</seedstack.version>
-    </properties>
 
     <build>
         <pluginManagement>
@@ -62,13 +58,12 @@
                             <goal>javadoc</goal>
                         </goals>
                         <configuration>
-                            <windowtitle>SeedStack API</windowtitle>
-                            <doctitle>SeedStack API</doctitle>
+                            <windowtitle>SeedStack API ${project.version}</windowtitle>
+                            <doctitle>SeedStack API ${project.version}</doctitle>
                             <detectOfflineLinks>false</detectOfflineLinks>
                             <includeDependencySources>true</includeDependencySources>
                             <includeTransitiveDependencySources>false</includeTransitiveDependencySources>
-                            <excludePackageNames>*.internal.*:org.springframework*:org.openjdk*:org.apache.shiro*
-                            </excludePackageNames>
+                            <excludePackageNames>*.internal.*:org.springframework*:org.openjdk*:org.apache.shiro*</excludePackageNames>
                             <additionalDependencies>
                                 <additionalDependency>
                                     <groupId>javax.el</groupId>
@@ -99,6 +94,16 @@
                                     <groupId>javax.mail</groupId>
                                     <artifactId>mail</artifactId>
                                     <version>1.4.7</version>
+                                </additionalDependency>
+                                <additionalDependency>
+                                    <groupId>javax.validation</groupId>
+                                    <artifactId>validation-api</artifactId>
+                                    <version>2.0.1.Final</version>
+                                </additionalDependency>
+                                <additionalDependency>
+                                    <groupId>org.hibernate</groupId>
+                                    <artifactId>hibernate-validator</artifactId>
+                                    <version>5.4.3.Final</version>
                                 </additionalDependency>
                                 <additionalDependency>
                                     <groupId>org.subethamail</groupId>
@@ -166,7 +171,7 @@
             <dependency>
                 <groupId>org.seedstack</groupId>
                 <artifactId>seedstack-bom</artifactId>
-                <version>${seedstack.version}</version>
+                <version>${project.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
